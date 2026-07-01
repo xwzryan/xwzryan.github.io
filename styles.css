@@ -526,6 +526,10 @@ h1 {
   gap: 18px;
 }
 
+.mobile-decision + .pricing-grid {
+  margin-top: 18px;
+}
+
 .price-card {
   position: relative;
   padding: 28px;
@@ -691,6 +695,86 @@ h1 {
   color: var(--muted);
   font-size: 13px;
   line-height: 1.6;
+}
+
+.mobile-decision {
+  margin-top: 18px;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: 22px;
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(255, 253, 250, 0.68)),
+    var(--paper);
+  box-shadow: 0 20px 70px rgba(45, 36, 28, 0.08);
+}
+
+.decision-head h3 {
+  margin-top: 8px;
+  font-size: 28px;
+  line-height: 1.18;
+}
+
+.decision-head p {
+  margin-top: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.decision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.decision-grid div {
+  min-height: 154px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 253, 250, 0.72);
+}
+
+.decision-grid div:nth-child(2) {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.16);
+  background: linear-gradient(145deg, #191919, #8f2020);
+}
+
+.decision-grid span,
+.decision-grid strong,
+.decision-grid p {
+  display: block;
+}
+
+.decision-grid span {
+  color: var(--red-dark);
+  font-size: 13px;
+  font-weight: 820;
+}
+
+.decision-grid div:nth-child(2) span {
+  color: #ffb2b2;
+}
+
+.decision-grid strong {
+  margin-top: 20px;
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.decision-grid p {
+  margin-top: 10px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.decision-grid div:nth-child(2) p {
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .calculator {
@@ -1000,6 +1084,7 @@ input[type="range"]::-webkit-slider-thumb {
 
   .intro-strip,
   .pricing-grid,
+  .mobile-decision,
   .calculator,
   .service-grid,
   .timeline,
@@ -1024,6 +1109,10 @@ input[type="range"]::-webkit-slider-thumb {
   .table-row span:first-child {
     border-top: 0;
     background: rgba(21, 21, 21, 0.035);
+  }
+
+  .decision-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1062,10 +1151,82 @@ input[type="range"]::-webkit-slider-thumb {
     padding-top: 76px;
   }
 
+  .section-heading {
+    margin-bottom: 22px;
+  }
+
   .price-card,
+  .mobile-decision,
   .calculator,
   .boundary-card {
     padding: 20px;
+  }
+
+  .price-card {
+    min-height: 0;
+  }
+
+  .price {
+    margin-top: 22px;
+  }
+
+  .price strong {
+    font-size: 64px;
+  }
+
+  .price-note {
+    min-height: 0;
+  }
+
+  .feature-list {
+    margin-top: 18px;
+  }
+
+  .decision-head h3 {
+    font-size: 26px;
+  }
+
+  .decision-grid div {
+    min-height: 0;
+  }
+
+  .comparison-table {
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .table-head {
+    display: none;
+  }
+
+  .table-row {
+    margin-top: 10px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(255, 253, 250, 0.72);
+  }
+
+  .table-row span {
+    padding: 12px 14px;
+  }
+
+  .table-row span:first-child {
+    color: var(--ink);
+    background: #fff;
+  }
+
+  .table-row span:nth-child(2)::before {
+    content: "基础版：";
+    color: var(--muted);
+    font-weight: 750;
+  }
+
+  .table-row span:nth-child(3)::before {
+    content: "企业发展服务：";
+    color: var(--red-dark);
+    font-weight: 750;
   }
 
   .site-footer {
